@@ -1,0 +1,25 @@
+{
+  "$schema": "https://codesandbox.io/schemas/tasks.json",
+  "setupTasks": [
+    {
+      "name": "Install Backend Dependencies",
+      "command": "pip install -r backend/requirements.txt"
+    },
+    {
+      "name": "Install Frontend Dependencies",
+      "command": "cd frontend && npm install"
+    }
+  ],
+  "tasks": {
+    "start-backend": {
+      "name": "Run FastAPI Server (port 8000)",
+      "command": "cd backend && uvicorn main:app --host 0.0.0.0 --port 8000 --reload",
+      "runAtStart": true
+    },
+    "start-frontend": {
+      "name": "Run React App (port 5173)",
+      "command": "cd frontend && npm run dev",
+      "runAtStart": true
+    }
+  }
+}

@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+*.pt
+
+# Node.js
+node_modules/
+dist/
+
+# 環境設定
+.env
