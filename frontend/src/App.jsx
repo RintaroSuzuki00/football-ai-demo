@@ -12,8 +12,8 @@ export default function App() {
   const [personCount, setPersonCount] = useState(null);   // AIが見つけた人数
   const [isLoading, setIsLoading] = useState(false);      // 通信中かどうか
 
-  // ★体験会ポイント：自分のCodeSandboxのバックエンドURLに書き換えよう！
-  const BACKEND_URL = "https://your-backend-url.csb.app";
+  // バックエンド（Google Colab + ngrok 固定ドメイン）のURL
+  const BACKEND_URL = "https://football-ai.ngrok.app";
 
   // ==========================================
   // 2. 画像が選ばれたときの処理

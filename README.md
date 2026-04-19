@@ -30,31 +30,26 @@ football-ai-demo/
 
 ## 体験会当日の手順
 
-### 【運営側】バックエンドの起動（事前に行う）
+### 【運営側】バックエンドの起動（体験会当日）
 
 1. `backend/yolo_backend.ipynb` を [Google Colab](https://colab.research.google.com) で開きます。
 2. セルを上から順に実行します。
-3. 最後のセルを実行すると、以下のようなURLが表示されます。
+3. 最後のセルを実行すると、以下のように表示されます。
    ```
-   Public URL: https://xxxx-xx-xxx-xxx-xxx.ngrok-free.app
+   ✅ サーバーが起動しました！
+   Public URL: https://football-ai.ngrok.app
    ```
-4. このURLを参加者に共有します（QRコードやチャットで）。
+4. これで準備完了です。参加者への URL 共有は不要です。
 
 ### 【参加者】フロントエンドのセットアップ
 
-1. 以下のURLをブラウザで開きます。
+1. 以下のURLをブラウザで開くだけです。
    ```
    https://codesandbox.io/p/github/RintaroSuzuki00/football-ai-demo
    ```
 2. CodeSandboxが自動でForkし、Reactアプリが起動します。
-3. `frontend/src/App.jsx` を開き、`BACKEND_URL` を運営から共有されたngrokのURLに書き換えます。
-   ```js
-   // 変更前
-   const BACKEND_URL = "https://your-backend-url.ngrok-free.app";
-   // 変更後（運営から共有されたURLに書き換える）
-   const BACKEND_URL = "https://xxxx-xx-xxx-xxx-xxx.ngrok-free.app";
-   ```
-4. 保存（Ctrl+S）すると画面が自動更新されます。
+3. **バックエンドURLの書き換えは不要です。** 固定ドメインがコードに設定済みです。
+4. 「画像を選択」ボタンからすぐに体験を開始できます。
 
 ---
 
