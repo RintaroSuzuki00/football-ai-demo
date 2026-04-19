@@ -71,25 +71,31 @@ export default function App() {
   // 4. 画面の見た目（JSX）
   // ==========================================
   return (
-    <div className="App">
-      <h1>アメフト画像解析（YOLOv8）</h1>
-      <p>フロントエンド（React）からバックエンド（Python）へ画像を送り、AIで解析します。</p>
+    <div className="max-w-2xl mx-auto my-10 p-10 bg-white rounded-xl shadow-lg text-center">
+      <h1 className="text-3xl font-bold text-[#0a2240] mb-2">アメフト画像解析（YOLOv8）</h1>
+      <p className="text-gray-600 mb-6">フロントエンド（React）からバックエンド（Python）へ画像を送り、AIで解析します。</p>
 
       {/* 画像を選ぶボタン */}
-      <div className="upload-section">
-        <label className="btn-upload">
+      <div className="mb-8">
+        <label className="inline-block bg-[#ff6b00] hover:bg-[#e66000] text-white py-3 px-7 rounded-lg text-base font-bold cursor-pointer transition-colors">
           画像を選択
-          <input type="file" accept="image/*" onChange={handleFileChange} style={{ display: "none" }} />
+          <input type="file" accept="image/*" onChange={handleFileChange} className="hidden" />
         </label>
       </div>
 
       {/* 画像が選ばれていたら、プレビューと解析ボタンを表示 */}
       {previewUrl && (
-        <div className="preview-section">
-          <h3>1. 選択した画像（フロントエンド）</h3>
-          <img src={previewUrl} alt="プレビュー" className="preview-image" />
+        <div className="mt-8 text-left">
+          <h3 className="text-xl font-bold text-[#0a2240] mb-3">1. 選択した画像（フロントエンド）</h3>
+          <img src={previewUrl} alt="プレビュー" className="w-full rounded-lg shadow-md" />
           
-          <button className="btn-analyze" onClick={handleAnalyze} disabled={isLoading}>
+          <button 
+            className={`block w-full py-3.5 mt-4 rounded-lg text-base font-bold text-white transition-colors ${
+              isLoading ? "bg-gray-400 cursor-not-allowed" : "bg-[#0a2240] hover:bg-[#081b33] cursor-pointer"
+            }`}
+            onClick={handleAnalyze} 
+            disabled={isLoading}
+          >
             {isLoading ? "AIで解析中..." : "YOLOで解析する"}
           </button>
         </div>
@@ -97,12 +103,12 @@ export default function App() {
 
       {/* AIから結果が返ってきていたら、結果を表示 */}
       {resultImage && (
-        <div className="result-section">
-          <h3>2. 解析結果（バックエンドから返却）</h3>
-          <div className="result-stats">
-            検出された人数: <strong>{personCount} 人</strong>
+        <div className="mt-8 text-left">
+          <h3 className="text-xl font-bold text-[#0a2240] mb-3">2. 解析結果（バックエンドから返却）</h3>
+          <div className="text-lg text-gray-800 mb-3 py-3 px-4 bg-blue-50 border-l-4 border-[#0a2240] rounded">
+            検出された人数: <strong className="text-2xl text-[#ff6b00]">{personCount} 人</strong>
           </div>
-          <img src={resultImage} alt="解析結果" className="result-image" />
+          <img src={resultImage} alt="解析結果" className="w-full rounded-lg shadow-md" />
         </div>
       )}
     </div>
