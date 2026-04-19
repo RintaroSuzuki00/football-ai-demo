@@ -72,7 +72,7 @@ export default function App() {
   // ==========================================
   return (
     <div className="max-w-2xl mx-auto my-10 p-10 bg-white rounded-xl shadow-lg text-center">
-      <h1 className="text-3xl font-bold text-[#0a2240] mb-2">アメフト画像解析（YOLOv8）</h1>
+      <h1 className="text-3xl font-bold text-[#0a2240] mb-2">アメフト画像解析</h1>
       <p className="text-gray-600 mb-6">フロントエンド（React）からバックエンド（Python）へ画像を送り、AIで解析します。</p>
 
       {/* 画像を選ぶボタン */}
